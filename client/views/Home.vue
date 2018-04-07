@@ -1,44 +1,26 @@
 <template>
   <div class="page">
-    <insta></insta>
-		<name></name>
+		<first></first>
   </div>
 </template>
 
 <script>
-import Insta from 'components/Insta'
-import Name from 'components/Name'
+import First from 'components/First'
+import Navbar from 'components/Navbar'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-
 export default {
   components: {
-		Insta,
-		Name
+		First,
+		Navbar
   }
 }
 </script>
 
 <style>
-body {
-	background: #00b4ff;
-	color: #333;
-	font: 100% Lato, Arial, Sans Serif;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
+.page {
+	height: 100%;
 }
-
-#background-wrap {
-    bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: -1;
-}
-
 </style>

@@ -29,7 +29,9 @@ const actions = {
     .then(response => {
       // JSON responses are automatically parsed.
       response.data.graphql.user.edge_owner_to_timeline_media.edges.forEach(({ node }) => {
-        state.floofPics.push(node.display_url)
+        console.log(node)
+        state.floofPics.push(node)
+
       })
     })
     .catch(e => {

@@ -1,9 +1,8 @@
 <template>
-    <div class="flex-nowrap">
-    <div v-for="(pic, idx) of floofPics"  v-bind:key="pic">
-         <img class="img-circle off-screen-left" :src="pic"  v-bind:id="pic"  />
-         </div>
-    <button @click="animateAllCats()">Cat Mode</button>         
+    <div id="flex-nowrap">
+    <div v-for="({display_url, shortcode }, idx) of floofPics"  v-bind:key="display_url" class="floofContainer">
+         <img class="img-circle" :src="display_url"  v-bind:id="display_url" v-on:click="openInsta(shortcode)"/>
+         </div>        
     </div>
 </template>
 
@@ -12,6 +11,14 @@ import $ from 'jquery'
 export default {
   mounted() {
     this.$store.dispatch('getFloofPics')
+    const that = this
+    $(document).on('DOMNodeInserted', function(e) {
+      if ( $(e.target).hasClass('floofContainer') ) {
+          $(e.target).css({opacity: 0.0})
+          $(e.target).animate({opacity: 0.85}, 2000)          
+          that.animateAllCats()
+      }
+    });
 
   },
   data() {
@@ -20,27 +27,42 @@ export default {
       }
     },
     methods: {
+          openInsta (link) {
+            const win = window.open(`https://www.instagram.com/p/${link}/`, '_blank');
+            win.focus();
+          },
           animateAllCats () {
-              for(var item of $(".img-circle")){
-                console.log(item)
-                this.animateDiv(item)
-              }
+            let timing = 0;
+            for(var item of $(".img-circle")){
+              const [top, left] = this.makeNewPosition()
+              $(item).css({top,left});
+              this.timingCat(item, timing)
+              timing += 400;
+            }
+          },
+          timingCat(item, timing) {
+                setTimeout( () => {
+                  this.animateDiv(item)
+                  }, timing)
           },
           makeNewPosition(){
               // Get viewport dimensions (remove the dimension of the div)
-              let h = $(window).height() - 50
-              let w = $(window).width() - 50
+              let h = $(`#flex-nowrap`).height()
+              let w = $(`#flex-nowrap`).width()
+              let windowH = $(window).height()
+              let windowW = $(window).width()
               
-              let nh = Math.floor(Math.random() * h)
-              let nw = Math.floor(Math.random() * w)
-              
+              console.log(h, w)
+              let nh = Math.floor(Math.random() * h) + windowH - h
+              let nw = Math.floor(Math.random() * w) + windowW - w
+
               return [nh,nw]        
               },
           animateDiv(el){
               let newq = this.makeNewPosition()
               let oldq = $(el).offset()
               let speed = this.calcSpeed([oldq.top, oldq.left], newq)
-    
+              console.log(newq)
               $(el).animate({ top: newq[0], left: newq[1] }, speed, () => { this.animateDiv(el)})
           }, 
           calcSpeed(prev, next) {
@@ -70,54 +92,11 @@ export default {
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
     background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
+    cursor: pointer;
 }
 
-.off-screen-left {
-  top: 0;
-  left: 0;
-}
-
-.container {
-  margin: 100px;
-}
-
-.circle {
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  margin: 10px;
-}
-
-.circle0 {
-  background: PaleTurquoise;
-  transition: all 1.5s linear;
-  transform: translate3d(200px, 100px);
-  transform: translate3d(200px, 100px);  
-} 
-
-.circle1 {
-  background: salmon;
-  transition: all 1.5s ease;
-}
-
-.circle2 {
-  background: lightskyblue;
-  transition: all 1.5s ease-in;
-}
-
-.circle3 {
-  background: khaki;
-  transition: all 1.5s ease-out;
-}
-
-.circle4 {
-  background: mediumturquoise;
-  transition: all 1.5s ease-in-out;
-}
-
-.circle5 {
-  background: thistle;
-  transition: all 1.5s cubic-bezier(0,1,.98,0); 
+#flex-nowrap {
+  height: 100%
 }
 </style>
 
