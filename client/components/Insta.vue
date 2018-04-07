@@ -1,15 +1,18 @@
 <template>
-    <div class="d-flex flex-nowrap">
-    <div v-for="(pic, idx) of floofPics"  v-bind:key="pic"  v-bind:class="randomClass(idx)"  >
-         <img class="img-circle p2" :src="pic" />
+    <div class="flex-nowrap">
+    <div v-for="(pic, idx) of floofPics"  v-bind:key="pic">
+         <img class="img-circle off-screen-left" :src="pic"  v-bind:id="pic"  />
          </div>
+    <button @click="animateAllCats()">Cat Mode</button>         
     </div>
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   mounted() {
     this.$store.dispatch('getFloofPics')
+
   },
   data() {
     return {
@@ -17,9 +20,40 @@ export default {
       }
     },
     methods: {
-           randomClass (idx) {
-               return `order-${idx} p-2`
-           }
+          animateAllCats () {
+              for(var item of $(".img-circle")){
+                console.log(item)
+                this.animateDiv(item)
+              }
+          },
+          makeNewPosition(){
+              // Get viewport dimensions (remove the dimension of the div)
+              let h = $(window).height() - 50
+              let w = $(window).width() - 50
+              
+              let nh = Math.floor(Math.random() * h)
+              let nw = Math.floor(Math.random() * w)
+              
+              return [nh,nw]        
+              },
+          animateDiv(el){
+              let newq = this.makeNewPosition()
+              let oldq = $(el).offset()
+              let speed = this.calcSpeed([oldq.top, oldq.left], newq)
+    
+              $(el).animate({ top: newq[0], left: newq[1] }, speed, () => { this.animateDiv(el)})
+          }, 
+          calcSpeed(prev, next) {
+    
+            let x = Math.abs(prev[1] - next[1])
+            let y = Math.abs(prev[0] - next[0])
+            let greatest = x > y ? x : y
+            let speedModifier = 0.1
+            let speed = Math.ceil(greatest/speedModifier)
+
+            return speed
+
+          }
        }
   }
 </script>
@@ -28,7 +62,19 @@ export default {
 
 .img-circle {
     border-radius: 100%;
-    width:10%;
+    width:8%;
+    position: fixed;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65))), no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
+}
+
+.off-screen-left {
+  top: 0;
+  left: 0;
 }
 
 .container {
@@ -37,8 +83,8 @@ export default {
 
 .circle {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   margin: 10px;
 }
 

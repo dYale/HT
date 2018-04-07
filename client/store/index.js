@@ -28,10 +28,7 @@ const actions = {
     axios.get(`https://www.instagram.com/artemis_the_floof/?__a=1`)
     .then(response => {
       // JSON responses are automatically parsed.
-      debugger
-      console.log(response.data.graphql.user.edge_owner_to_timeline_media.edges)
       response.data.graphql.user.edge_owner_to_timeline_media.edges.forEach(({ node }) => {
-        console.log(node)
         state.floofPics.push(node.display_url)
       })
     })
