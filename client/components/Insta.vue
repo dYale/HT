@@ -16,10 +16,11 @@ export default {
     }
       const that = this
       $(document).on('DOMNodeInserted', function(e) {
-        console.log(e.target)
         if ( $(e.target).hasClass('floofContainer') || $(e.target).hasClass('page')) {
-            $(e.target).css({opacity: 0.0})
-            $(e.target).animate({opacity: 0.85}, 2000)          
+            if($(e.target).hasClass('floofContainer')){
+              $(e.target).css({opacity: 0.0})
+              $(e.target).animate({opacity: 0.85}, 2000)
+            }
             that.animateAllCats()
         }
       });
@@ -36,7 +37,6 @@ export default {
           },
           openInsta (link) {
             var music = this.$refs.audio[0];
-            console.log(music)
             music.play();
             const win = window.open(`https://www.instagram.com/p/${link}/`, '_blank');
             win.focus();
@@ -72,7 +72,6 @@ export default {
               let newq = this.makeNewPosition()
               let oldq = $(el).offset()
               let speed = this.calcSpeed([oldq.top, oldq.left], newq)
-              console.log(newq)
               if( newq[0] && newq[1]){
                 $(el).animate({ top: newq[0], left: newq[1] }, speed, () => { this.animateDiv(el)})
               }

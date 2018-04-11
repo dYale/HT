@@ -7,7 +7,7 @@ Vue.use(Vuex)
 const state = {
   count: 0,
   floofPics: [],
-  currentTab: "Home",
+  currentTab: "Me",
   catGround: ""
 }
 
@@ -31,7 +31,6 @@ const actions = {
     .then(response => {
       // JSON responses are automatically parsed.
       response.data.graphql.user.edge_owner_to_timeline_media.edges.forEach(({ node }) => {
-        console.log(node)
         state.floofPics.push(node)
 
       })
@@ -41,7 +40,6 @@ const actions = {
     })
   },
   getRandomCats () {
-    console.log("GETTING")
     axios.get(`http://thecatapi.com/api/images/get?results_per_page=20`) 
     .then(response => {
       // JSON responses are automatically parsed.
