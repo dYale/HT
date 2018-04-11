@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper justify-content-center">
-      <h2 class="word justify-content-center" v-on:mouseover="htName='/ˈhɪliˈtelə/'" v-on:mouseleave="htName='hill·ie·tell·er'"><p>{{htName}}</p></h2>
+      <h2 style="width: 50%" class="word justify-content-center" v-on:mouseover="htName='/ˈhɪliˈtelə/'" v-on:mouseleave="htName='hill·ie·tell·er'"><p>{{htName}}</p></h2>
     </div>
 </template>
 
@@ -22,8 +22,8 @@ export default {
 <style>
 .word {
   font-family: "Times New Roman", Times, serif;
-  font-size: 350px;
-  color: #83774a;
+  font-size: 10vw;
+  color: #654f00;
   display:inline-block;
 }
 

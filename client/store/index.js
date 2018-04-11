@@ -6,7 +6,9 @@ Vue.use(Vuex)
 
 const state = {
   count: 0,
-  floofPics: []
+  floofPics: [],
+  currentTab: "Home",
+  catGround: ""
 }
 
 const mutations = {
@@ -35,6 +37,20 @@ const actions = {
       })
     })
     .catch(e => {
+      this.errors.push(e)
+    })
+  },
+  getRandomCats () {
+    console.log("GETTING")
+    axios.get(`http://thecatapi.com/api/images/get?results_per_page=20`) 
+    .then(response => {
+      // JSON responses are automatically parsed.
+      console.log(response)
+        state.catGround = (node)
+
+      })
+    .catch(e => {
+      console.log("ERR:" + e)
       this.errors.push(e)
     })
   }

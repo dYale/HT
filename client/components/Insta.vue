@@ -1,6 +1,7 @@
 <template>
     <div id="flex-nowrap">
     <div v-for="({display_url, shortcode }, idx) of floofPics"  v-bind:key="display_url" class="floofContainer">
+        <audio ref="audio" :src="'/static/meow.mp3'"></audio>
          <img class="img-circle" :src="display_url"  v-bind:id="display_url" v-on:click="openInsta(shortcode)"/>
          </div>        
     </div>
@@ -10,16 +11,18 @@
 import $ from 'jquery'
 export default {
   mounted() {
-    this.$store.dispatch('getFloofPics')
-    const that = this
-    $(document).on('DOMNodeInserted', function(e) {
-      if ( $(e.target).hasClass('floofContainer') ) {
-          $(e.target).css({opacity: 0.0})
-          $(e.target).animate({opacity: 0.85}, 2000)          
-          that.animateAllCats()
-      }
-    });
-
+    if(!this.$store.state.floofPics.length){
+      this.$store.dispatch('getFloofPics')
+    }
+      const that = this
+      $(document).on('DOMNodeInserted', function(e) {
+        console.log(e.target)
+        if ( $(e.target).hasClass('floofContainer') || $(e.target).hasClass('page')) {
+            $(e.target).css({opacity: 0.0})
+            $(e.target).animate({opacity: 0.85}, 2000)          
+            that.animateAllCats()
+        }
+      });
   },
   data() {
     return {
@@ -27,7 +30,14 @@ export default {
       }
     },
     methods: {
+          play () {
+            var audio = document.getElementById("audio")
+            audio.play()
+          },
           openInsta (link) {
+            var music = this.$refs.audio[0];
+            console.log(music)
+            music.play();
             const win = window.open(`https://www.instagram.com/p/${link}/`, '_blank');
             win.focus();
           },
@@ -42,7 +52,9 @@ export default {
           },
           timingCat(item, timing) {
                 setTimeout( () => {
-                  this.animateDiv(item)
+                  if(item){
+                    this.animateDiv(item)
+                  }
                   }, timing)
           },
           makeNewPosition(){
@@ -51,8 +63,6 @@ export default {
               let w = $(`#flex-nowrap`).width()
               let windowH = $(window).height()
               let windowW = $(window).width()
-              
-              console.log(h, w)
               let nh = Math.floor(Math.random() * h) + windowH - h
               let nw = Math.floor(Math.random() * w) + windowW - w
 
@@ -63,7 +73,9 @@ export default {
               let oldq = $(el).offset()
               let speed = this.calcSpeed([oldq.top, oldq.left], newq)
               console.log(newq)
-              $(el).animate({ top: newq[0], left: newq[1] }, speed, () => { this.animateDiv(el)})
+              if( newq[0] && newq[1]){
+                $(el).animate({ top: newq[0], left: newq[1] }, speed, () => { this.animateDiv(el)})
+              }
           }, 
           calcSpeed(prev, next) {
     
@@ -84,7 +96,7 @@ export default {
 
 .img-circle {
     border-radius: 100%;
-    width:8%;
+    width:12vw;
     position: fixed;
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), no-repeat;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65))), no-repeat;
