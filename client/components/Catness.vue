@@ -28,9 +28,4 @@ export default {
     width: 50%;
     text-align: center;
 }
-.wrapper {
-        background: -moz-linear-gradient(top, #9aa230 30%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #9aa230 30%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #9aa230 30%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div @click="clicked" v-on:keydown="keyPressed" class="cat" tabindex=-1>
+  <div @click="clicked" v-on:touchstart="keyPressed" v-on:keydown="keyPressed" class="cat" tabindex=-1>
       <img :src="catUrl" class="cat"><div class="totally"></div>
 	<catness></catness>
   </div>
@@ -29,20 +29,22 @@ export default {
             var img = document.createElement("img");
             const randomClass = this.makeid()
             img.src = "http://thecatapi.com/api/images/get?" + randomClass
-            $(img).css({top,left, width: "300px", height: "300px", position: "fixed", "border-radius": "25px"});
+            $(img).css({top,left, width: "15vw", height: "15vw", position: "fixed", "border-radius": "25px"});
             $(img).addClass(randomClass)
             $( ".cat" ).append(img);
             $(`.${randomClass}`).fadeOut(20000, function() {$(this).remove(); })
 
        },
         keyPressed: function(event) {
-            debugger
-            if(this.catUrl[this.catUrl.length - 1] === "a"){
-                var catUrl = this.catUrl.substring(0, [this.catUrl.length - 1]) + "b"
-            } else {
-                var catUrl = this.catUrl + "a"
+            if(event.type === "keydown" || (event.type === "touchstart" && event.touches.length > 1)){
+
+                if(this.catUrl[this.catUrl.length - 1] === "a"){
+                    var catUrl = this.catUrl.substring(0, [this.catUrl.length - 1]) + "b"
+                } else {
+                    var catUrl = this.catUrl + "a"
+                }
+                this.catUrl = catUrl
             }
-            this.catUrl = catUrl
         },
         makeid: function() {
             var text = "";

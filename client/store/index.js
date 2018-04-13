@@ -38,6 +38,18 @@ const actions = {
     .catch(e => {
       this.errors.push(e)
     })
+
+    axios.get(`https://www.instagram.com/hillieann/?__a=1`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      response.data.graphql.user.edge_owner_to_timeline_media.edges.forEach(({ node }) => {
+        state.floofPics.push(node)
+
+      })
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   },
   getRandomCats () {
     axios.get(`http://thecatapi.com/api/images/get?results_per_page=20`) 

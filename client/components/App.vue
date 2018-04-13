@@ -38,4 +38,15 @@ body {
     border-radius: 2px;
   }
 }
+
+@font-face {
+font-family: "Norwester";
+src: url("/fonts/norwester/webfonts/norwester.eot");
+src: 
+url("/fonts/norwester/webfonts/norwester.woff") format("woff"),
+url("/fonts/norwester/norwester.otf") format("opentype"),
+url("/fonts/norwester/webfonts/norwester.svg#filename") format("svg");
+}
+
+
 </style>
