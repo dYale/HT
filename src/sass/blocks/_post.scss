@@ -125,6 +125,11 @@
     @media (--laptop) {
       padding-right: 7.5rem;
     }
+
+    @media (--phone) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__body {
