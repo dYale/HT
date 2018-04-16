@@ -1,6 +1,5 @@
 <template>
-  <transition name="post">
-    <article v-if="post" class="post">
+    <div v-if="post" class="post">
       <header class="post__header">
         <h2 class="post__title">{{ title }}</h2>
         <h3 class="post__meta">by {{ author }}
@@ -17,8 +16,7 @@
         <vue-disqus v-if="commentsReady" shortname="Hillie Teller"
           :key="post" :identifier="post"/>
       </footer>
-    </article>
-  </transition>
+    </div>
 </template>
 
 <script>

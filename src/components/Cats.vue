@@ -12,8 +12,6 @@
 <script>
 import Catness from './Catness';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
 import $ from 'jquery';
 
 export default {
@@ -27,8 +25,8 @@ export default {
   },
   methods: {
     clicked: function(event) {
-      const top = event.pageY;
-      const left = event.pageX;
+      const top = event.y;
+      const left = event.x;
       var img = document.createElement('img');
       const randomClass = this.makeid();
       img.src = 'http://thecatapi.com/api/images/get?' + randomClass;

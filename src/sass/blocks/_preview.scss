@@ -72,7 +72,8 @@
     color: cc(txt, inv);
     background-color: cc(shadow, 0);
     transition: background-color 225ms cb();
-
+    font-size:2.5vw;
+    
     .preview__figure--mobile &,
     &:hover {
       background-color: cc(shadow, .65);

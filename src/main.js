@@ -6,10 +6,8 @@ import store from './store'
 import router from './router'
 import * as resources from './resources'
 import resource from './plugins/resource'
-import BootstrapVue from 'bootstrap-vue'
 import deviceQueries from './plugins/device-queries'
 
-Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 Vue.use(resource, {

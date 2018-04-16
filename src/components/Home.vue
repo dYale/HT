@@ -8,9 +8,6 @@
 import First from './First';
 import Navbar from './Navbar';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-
 export default {
   components: {
     First,
@@ -22,6 +19,5 @@ export default {
 <style>
 .home-page {
   height: 100%;
-  text-align: center;
 }
 </style>

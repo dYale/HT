@@ -1,0 +1,13 @@
+{
+  "results": [{
+    "id": "feminist-panda",
+    "title": "Feminism for the Average Panda",
+    "content": "Humans love naming things and fitting them in groups, and categories certainly help us study animals. But animal classification is a surprisingly inexact science. The problems arise when animals don't quite fit in this or that premade category. Giant pandas are just such an example.\n\nIt wasn't until 1869 that Westerners got their first look at the giant panda. Père Armand David, a Catholic priest, had the first peek and likened the strange animal to a bear and so used the Latin word for bear, ursus, in its name. This instinct is understandable -- after all, the giant panda looks a lot like a bear. But not too long after Armand David did this, Alphonse Milne-Edwards, a French scientist, inspected the remains of a giant panda and concluded it was closer to a cat-like creature in the raccoon family called the red panda. He promptly changed its name and put it into its own category.",
+    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/450744/nate-rayfield.jpg",
+    "meta": {
+      "description": "You came to learn about feminism. But I couldn't bear it.",
+      "published": "1942-05-10T13:57:35Z",
+      "author": "JANE MCGRATH"
+    }
+  }]
+}

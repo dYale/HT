@@ -1,8 +1,8 @@
 <template>
-  <main class="blog" :class="{ 'blog--reading': this.post }">
+  <div class="blog" :class="{ 'blog--reading': this.post }">
     <blog-feed :filters="filters"/>
     <blog-post :post="post"/>
-  </main>
+  </div>
 </template>
 
 <script>

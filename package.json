@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap-vue": "^2.0.0-rc.6",
     "jquery": "^3.3.1",
     "lodash.merge": "^4.6.0",
     "scrollto-with-animation": "^4.5.2",

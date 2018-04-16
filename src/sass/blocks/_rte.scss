@@ -30,8 +30,6 @@
   }
 
   ul {
-    margin-top: 1.5em;
-    margin-bottom: .75em;
 
     li {
       position: relative;
@@ -46,7 +44,7 @@
         width: .2em;
         height: .2em;
         border-radius: 100%;
-        bacground-color: cc(accent);
+        background-color: cc(accent);
       }
 
       & + li {

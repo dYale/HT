@@ -1,16 +1,15 @@
 <template>
-
 <div class="parent">
   <a href="/" id="logo"></a>   
-  <div class="navbar">
+  <div class="navbar-ht">
     <audio ref="audio" :src="'/static/meow.mp3'"></audio>
-    <div class="menu row wrapper">
+    <div class="menu wrapper">
       <ul>
         <li v-bind:active="currentTab === 'Me'" v-on:active="currentTab = 'Me'" class="first nav-item">
           <a href="#/">Me</a>
         </li>
         <li v-on:click="play()" v-bind:active="currentTab === 'Cats'" v-on:active="currentTab = 'Cats'" class="col nav-item">
-            <a href="#/meow">Meow</a>
+            <a href="#/meow">Play</a>
         </li>
         <li class="col nav-item">
             <a href="#/blog">Blog</a>
@@ -125,13 +124,13 @@ export default {
 
 #logo {
   background: url("../../static/logo2.png") no-repeat center;
-  top: 30px;
-  left: 30px;
+  top: .5vw;
+  left: .5vw;
   width: 13vw;
   height: 13vw;
   background-size: cover;
   position: fixed;
-  border-radius: 80%;
+  border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 30px #dcdcdc;
   z-index: 100000000;
@@ -201,7 +200,7 @@ a {
   width: 100%;
   z-index: 100;
 }
-.navbar {
+.navbar-ht {
   display: flex;
   justify-content: space-between;
   background-color:  #dcdcdc;;
@@ -236,6 +235,10 @@ a {
     margin: 3vw 5vw 3vw 5vw;
   }
 
+  .menu ul {
+    margin-left: 17vw;
+  }
+
   .first {
     padding-left: 5vw;
   }
@@ -244,9 +247,17 @@ a {
     margin-right: 0;
   }
 
-  .navbar {
+  .navbar-ht {
     height: 18vw;
   }
+
+  .wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: unset;
+  /*height: 100vh;  */
+}
 }
 
 

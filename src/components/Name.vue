@@ -1,7 +1,7 @@
 <template>
-  <div class="justify-content-center">
-      <h2 class="word" v-on:mouseover="htName='/ˈhɪliˈtelə/'" v-on:mouseleave="htName='hill·ie·tell·er'"><p style="margin-top: 20%">{{htName}}</p></h2>
-      <h3 class="subword">It Doesn't Have to be Fun to be Fun</h3>
+  <div class="justify-content-center name">
+      <h2 class="word" v-on:mouseover="htName='/ˈhɪliˈtelə/'" v-on:mouseleave="htName='hill·ie·tell·er'"><p>{{htName}}</p></h2>
+      <h3 class="subword">it doesn't have to be fun to be fun</h3>
     </div>
 </template>
 <script>
@@ -34,5 +34,21 @@ export default {
 .header {
   width: 50%;
   text-align: center;
+}
+
+.name {
+  margin-top: 20%;
+}
+
+
+@media screen and (max-width: 480px) {
+ .word {
+    font-size: 15vw;
+    margin-top: 50%;
+  }
+
+  .subword {
+    font-size: 5vw;
+  }
 }
 </style>

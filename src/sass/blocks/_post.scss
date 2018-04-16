@@ -36,6 +36,11 @@
     left: calc(50% - 12rem);
   }
 
+  @media (--phone) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   &__header {
     @media (--tablet) {
       position: absolute;
@@ -127,7 +132,12 @@
     border-bottom: 1px solid cc(border);
 
     @media (--laptop) {
-      padding: 0 1.25rem 2.5rem;
+      padding: 0 1.25rem 2.5rem; 
+    }
+
+    @media (--phone) {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
