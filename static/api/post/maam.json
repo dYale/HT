@@ -1,13 +1,15 @@
 {
-  "results": [{
-    "id": "maam",
-    "title": "Yes ma'am",
-    "content": "'Yes ma’am,' he said as the bulldozer began to swing. It was hot. Too hot for even the most experienced of Jesuit princes. Pools of sweat coated the floor of the alley as the man, now 23, tiptoed closer to the amorphous blob. In that instant, the blob lurcher. Grabbing hold of the swinging bulldozer it flung towards the man. The man smiled.",
-    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/450744/tom-barrett.jpg",
-    "meta": {
-      "description": "It all started with a yes ma'am.",
-      "published": "2016-12-15T23:29:56Z",
-      "author": "Tiffany McBridenSonianEnStuff"
+  "results": [
+    {
+      "id": "maam",
+      "title": "Yes ma'am",
+      "content": "'Yes ma’am,' he said as the bulldozer began to swing. It was hot. Too hot for even the most experienced of Jesuit princes. Pools of sweat coated the floor of the alley as the man, now 23, tiptoed closer to the amorphous blob. In that instant, the blob lurcher. Grabbing hold of the swinging bulldozer it flung towards the man. The man smiled.",
+      "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/450744/tom-barrett.jpg",
+      "meta": {
+        "description": "It all started with a yes ma'am.",
+        "published": "2016-12-15T23:29:56Z",
+        "author": "Tiffany McBridenSonianEnStuff"
+      }
     }
-  }]
+  ]
 }

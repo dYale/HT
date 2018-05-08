@@ -1,5 +1,6 @@
 {
-    "results": [{
+  "results": [
+    {
       "id": "happy-birthday",
       "title": "Happy Birthday",
       "content": "As you begin to file away, the year that could fill a sea of essays, may you not focus on things gone astray, but smile remembering all of the fun horseplay.\n\nFor the time may be nigh to come away, with new perspective garnered from the fray.  So let us not attempt to delay, the glorious drive down life's freeway.\n\nInstead embrace the interplay, that embellishes life day-to-day. For this year will be filled with adventures non-cliche, whether it be Bombay, Taipei, or Far Rockaway.\n\nFor it is your day, a day for soiree, a day to take a sleigh down a mountain of clay. And when you finish your get away, know the adventures continue in old New York Bay.\n\nHappy Birthday, Hillie!",
@@ -9,6 +10,6 @@
         "published": "2018-03-15T18:31:01Z",
         "author": "Dan Corman"
       }
-    }]
-  }
-  
+    }
+  ]
+}

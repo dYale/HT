@@ -1,5 +1,6 @@
 {
-    "results": [{
+  "results": [
+    {
       "id": "terrible-fabrics",
       "title": "Terrible fabrics",
       "content": "Those without inspiration are like peanuts unshelled and lost. Crack a peanut. Eat a peanut. Perhaps you’re allergic, then obviously that would kill you.",
@@ -9,6 +10,6 @@
         "published": "2018-02-11T11:12:39Z",
         "author": "Lino"
       }
-    }]
-  }
-  
+    }
+  ]
+}

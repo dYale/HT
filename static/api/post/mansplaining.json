@@ -1,13 +1,15 @@
 {
-  "results": [{
-    "id": "mansplaining",
-    "title": "Mansplaining 101",
-    "content": "Mansplaining is a portmanteau that’s meaning is credited to Rebecca Solnit. The term refers to a situation in which a man, presuming that his listener (especially a woman) has inferior knowledge, explains something in a condescending way. \n\nIn case you’re not hip on your Solnit, they coined the term around 2008 in a blog piece called “Men Explain Things to Me; Facts Didn’t Get in Their Way.” They tell of how a man whom they met at a party instructed them to read a book he himself had not read, which turned out to be the very same book that Solnit had written. Obviously, this man is the butt of the joke. This scenario sounds like it’s from a sitcom. But let me break it down for you: X-splaining is way too easily appropriated by third-wave feminists6 in the post-modern age.\n\n That’s why I think Mansplaining should be called by its actual name, which is didacticism. And news flash, wimmin: a supposedly inclusive feminist often times becomes the didact in her conversations with the plebeian masses when she straightsplains to her gay friends about lesbian rights, cisplains to her trans friends about the stigma associated with transgendered identification, when she whitesplains to her black friends about the oppressive administration, skinnysplains to her fat friends about healthy eating, omnivoresplains to her vegan friends about the evils of the factory farm industry, blogsplains to her print journalist friends about the merits of indie-electro writing, or humansplains to her cat that sometimes sex can be both pleasurable and painful.\n\nNow that you are properly equipped with this information, you have all the intellectual tools to go out there and “smash the patriarchy” and start X-splaining. Good luck.",
-    "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/450744/karl-magnuson.jpg",
-    "meta": {
-      "description": "What is mansplaining? You don't need to ask to be educated.",
-      "published": "2015-01-16T18:17:00Z",
-      "author": "Michael Mayberry"
+  "results": [
+    {
+      "id": "mansplaining",
+      "title": "Mansplaining 101",
+      "content": "Mansplaining is a portmanteau that’s meaning is credited to Rebecca Solnit. The term refers to a situation in which a man, presuming that his listener (especially a woman) has inferior knowledge, explains something in a condescending way. \n\nIn case you’re not hip on your Solnit, they coined the term around 2008 in a blog piece called “Men Explain Things to Me; Facts Didn’t Get in Their Way.” They tell of how a man whom they met at a party instructed them to read a book he himself had not read, which turned out to be the very same book that Solnit had written. Obviously, this man is the butt of the joke. This scenario sounds like it’s from a sitcom. But let me break it down for you: X-splaining is way too easily appropriated by third-wave feminists6 in the post-modern age.\n\n That’s why I think Mansplaining should be called by its actual name, which is didacticism. And news flash, wimmin: a supposedly inclusive feminist often times becomes the didact in her conversations with the plebeian masses when she straightsplains to her gay friends about lesbian rights, cisplains to her trans friends about the stigma associated with transgendered identification, when she whitesplains to her black friends about the oppressive administration, skinnysplains to her fat friends about healthy eating, omnivoresplains to her vegan friends about the evils of the factory farm industry, blogsplains to her print journalist friends about the merits of indie-electro writing, or humansplains to her cat that sometimes sex can be both pleasurable and painful.\n\nNow that you are properly equipped with this information, you have all the intellectual tools to go out there and “smash the patriarchy” and start X-splaining. Good luck.",
+      "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/450744/karl-magnuson.jpg",
+      "meta": {
+        "description": "What is mansplaining? You don't need to ask to be educated.",
+        "published": "2015-01-16T18:17:00Z",
+        "author": "Michael Mayberry"
+      }
     }
-  }]
+  ]
 }
